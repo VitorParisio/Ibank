@@ -1,0 +1,140 @@
+/* -------- RESET -------- */
+*{
+	padding: 0;
+	margin: 0;
+	outline: none;
+	list-style: none;
+	border: none;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-family: serif;
+}
+
+
+/* ---------------- */
+
+/* -------- Página Login -------- */
+.login{
+	width: 100vw;
+	height: 100vh;
+	background: #6C7A89;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.login .login__logo{
+	text-align: center;
+}
+
+.login .login__p{
+	text-align: center;
+}
+
+.login label{
+	font-weight: bold;
+	padding:10px 0px;
+}
+
+.login .btn{
+	display: block;
+	width: 100%;
+	margin-top:30px;
+	font-size: 18px;
+}
+
+.alert{
+	margin-top:10px;
+}
+
+@media (max-width: 800px) {
+	.login .login__logo{
+		width:100%;
+	}
+
+	.alert{
+		width:100%;
+	}
+}
+/* ---------------- */
+
+
+/* --------Componente HEADER (Main) -------- */
+.header{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 50px;
+	background: #6C7A89;
+}
+
+.header .header__logo{
+	width:200px;
+}
+
+.header .header__menu ul{
+	display: flex;
+	padding: 0;
+	margin: 0;
+}
+
+.header .header__menu ul li {
+	display: flex;
+	flex-direction: column;
+	padding: 0 50px;
+	text-align: center;
+}
+
+.header .header__menu ul li a{
+	text-decoration: none;
+	color:#FFF;
+}
+
+.header .header__user ul{
+	padding:0;
+	margin: 0;
+	color:#FFF;
+}
+
+.header .header__user ul li a{
+	text-decoration: none;
+	color:#FFF;
+	display: block;
+}
+
+.header .header__user ul li a:hover{
+	color:darkgray;
+	display: block;
+	cursor: pointer;
+}
+
+.header .header__user ul li ul{
+	position: absolute;
+	right:0;
+	padding: 0;
+	color:#000;
+	width: 200px;
+	background: lightgray;
+	text-align: left;
+	border-top:1px solid rgba(192,192,192, 0.4);
+	margin-top:23px;
+	text-align: center;
+}
+
+.header .header__user ul li ul li a{
+	padding: 10px 0px;
+	display: block;
+}
+
+.header .header__user ul li ul li a:hover{
+	background: blue;
+	transition:0.2s;
+}
+
+
+
