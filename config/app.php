@@ -179,6 +179,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // Custom Providers 
+        App\Providers\LoginServiceProvider::class,
+        App\Providers\AccountServiceProvider::class,
+        App\Providers\BalanceServiceProvider::class,
+
     ],
 
     /*
@@ -228,6 +233,11 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 		'Form' => Collective\Html\FormFacade::class,
 		'Html' => Collective\Html\HtmlFacade::class,
+        
+        // Custom Aliases 
+        'Login' => App\Facades\Login::class,
+        'Account' => App\Facades\Account::class,
+        'Balance' => App\Facades\Balance::class,
 
     ],
 

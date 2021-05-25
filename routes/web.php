@@ -1,20 +1,17 @@
 <?php
 
-/*
-Route::get('/', function () {
-    return view('welcome');
-});
-*/
-
-
 /* --- Rotas -> Login --- */
 $this->get('/', 'LoginController@index');
 $this->post('/checklogin', 'LoginController@checkLogin')->name('check.login');
 
-/* --- Rotas -> Main --- */
+/* --- Rotas -> Group --- */
 Route::group(['middleware' => 'auth'], function () {
-    $this->get('/home', 'MainController@index')->name('main.index');
-	$this->get('/logout', 'MainController@logout')->name('logout');
+	/* --- Rotas -> Home --- */
+    $this->get('/home', 'HomeController@index')->name('home');
+	$this->get('/logout', 'HomeController@logout')->name('logout');
+
+	/* --- Rotas -> Account --- */
+	$this->get('/add', 'AccountController@index')->name('account');
+	$this->post('/add', 'AccountController@add')->name('account.add');
 });
 
-/* --- Rotas -> Account (Resource) --- */

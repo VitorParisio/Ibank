@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateResetPwsTable extends Migration
+class CreateBalancesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateResetPwsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reset_pws', function (Blueprint $table) {
+        Schema::create('balances', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->string('reset_code');
-            $table->timestamps();
+            $table->integer('account_id')->unsigned();
+            $table->double('amount', 10,2)->default(0);
+            $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateResetPwsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reset_pws');
+        Schema::dropIfExists('balances');
     }
 }

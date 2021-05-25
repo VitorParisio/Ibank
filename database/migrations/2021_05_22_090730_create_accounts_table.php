@@ -15,12 +15,11 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedBigInteger('user_id');
+            $table->integer('user_id')->unsigned();
             $table->string('name');
             $table->integer('agency');
             $table->integer('account_number');
             $table->string('type');
-            $table->double('amount', 10,2);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }

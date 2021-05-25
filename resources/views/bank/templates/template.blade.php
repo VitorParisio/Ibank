@@ -15,15 +15,13 @@
 		<!--FontAwesome Icons -->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 		
-		
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="{{url('assets/img/favicon.ico')}}" />
  	</head>
 	<body>
-		
-			@yield('content')
 
-		
+		@yield('content')
+
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 		<script type="text/javascript" src="{{asset('js/js.js')}}"></script>
 	</body>
