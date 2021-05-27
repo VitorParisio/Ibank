@@ -182,7 +182,7 @@ return [
         // Custom Providers 
         App\Providers\LoginServiceProvider::class,
         App\Providers\AccountServiceProvider::class,
-        App\Providers\BalanceServiceProvider::class,
+        App\Providers\HistoricServiceProvider::class,
 
     ],
 
@@ -237,7 +237,7 @@ return [
         // Custom Aliases 
         'Login' => App\Facades\Login::class,
         'Account' => App\Facades\Account::class,
-        'Balance' => App\Facades\Balance::class,
+        'Historic' => App\Facades\Account::class,
 
     ],
 

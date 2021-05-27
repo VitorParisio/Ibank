@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Balance;
+use App\Models\Historic;
 
 class Account extends Model
 {
@@ -12,7 +12,8 @@ class Account extends Model
 
 	public $timestamps = false;
 
-	public function balande(){
-		return $this->hasOne(Balance::class);
+	public function historic(){
+		return $this->hasMany(Historic::class);
 	}
+
 }

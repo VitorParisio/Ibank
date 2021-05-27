@@ -7,20 +7,20 @@ class LoginDAO
 {
 	public function index()
 	{
-		return view('bank.login.index');
+		return view('bank.pages.login.index');
 	}
 
 	public function checkLogin($email, $senha){
-		$login = new LoginDTO();
+		$login_dto = new LoginDTO();
 
-		$login->setEmail($email);
-		$login->setPassword($senha);
+		$login_dto->setEmail($email);
+		$login_dto->setPassword($senha);
 
-		$email = $login->getEmail();
-		$password = $login->getPassword();
+		$email    = $login_dto->getEmail();
+		$password = $login_dto->getPassword();
 
 		$user_data = array(
-			'email' => $email,
+			'email'    => $email,
 			'password' => $password
 		);
 

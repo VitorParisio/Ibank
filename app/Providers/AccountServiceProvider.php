@@ -3,8 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Classes\Account\AccountDAO;
 use Illuminate\Support\Facades\App;
+use App\Classes\Account\AccountDAO;
 
 class AccountServiceProvider extends ServiceProvider
 {

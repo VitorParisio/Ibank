@@ -20,6 +20,7 @@ class CreateAccountsTable extends Migration
             $table->integer('agency');
             $table->integer('account_number');
             $table->string('type');
+            $table->double('amount', 10,2)->default(0);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
     }

@@ -3,8 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\App;
+use App\Classes\Account\HistoricDAO;
 
-class BalanceServiceProvider extends ServiceProvider
+class HistoricServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -23,6 +25,8 @@ class BalanceServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+         App::bind('historic', function(){
+            return new HistoricDAO();
+        });
     }
 }

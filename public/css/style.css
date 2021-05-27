@@ -8,19 +8,18 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	font-family: serif;
+	
 }
 
 .main{
 	display: flex;
 	flex:1;
-	width: 100vw;
 	height: 100vh;
 }
 
 .content{
 	display: flex;
-	margin-top:60px;
+	margin-top: 60px;
 	width: 100%;
 	background-color:rgba(220,220,220,0.4);
 }
@@ -43,33 +42,25 @@
 
 .login .login__p{
 	text-align: center;
-	color:#FFF;
+	color: #FFF;
 }
 
 .login label{
 	font-weight: bold;
-	padding:10px 0px;
-	color:#FFF;
+	padding: 10px 0px;
+	color: #FFF;
 }
 
 .login .btn{
 	display: block;
 	width: 100%;
-	margin-top:30px;
+	margin-top: 30px;
 	font-size: 18px;
-}
-
-.alert{
-	margin-top:10px;
 }
 
 @media (max-width: 800px) {
 	.login .login__logo{
-		width:100%;
-	}
-
-	.alert{
-		width:100%;
+		width: 100%;
 	}
 }
 /* -------------------------------- */
@@ -77,62 +68,239 @@
 /* -------- Página HOME -------- */
 .content .home{
 	width: 100%;
-	color:gray;
-	background-color:rgba(220,220,220,0.4);
+	background-color: rgba(220,220,220,0.4);
 }
 
 .content .home h1{
-	width: 100%;
-	color:gray;
-	background-color:rgba(220,220,220,0.5);
+	color: gray;
+	background-color: rgba(220,220,220,0.5);
 	font-size: 20px;
-	padding:13px 15px;
+	padding: 13px 15px;
 }
 
 .content .home .container h2{
-
-}
-
-.content .home .container .card{
-	display: flex;
-	flex:1;
-	justify-content: space-between;
-	align-items: center;
-	background: green;
-	color:#FFF;
-}
-
-.content .home .container .card h3{
-	padding: 10px 0;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 	font-family: serif;
 }
+
+.content .home .container .group_card{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.content .home .container .group_card .card{
+	-webkit-background: linear-gradient(darkgreen, lightgreen);
+	-moz-background: linear-gradient(darkgreen, lightgreen);
+	background: linear-gradient(darkgreen, lightgreen);
+	color: #FFF;
+	margin:10px;
+	box-shadow: 0 3px 2px 1px rgba(0,0,0,0.3);
+}
+
+.content .home .container .empty{
+	background: #FFF;
+	line-height: 3;
+	padding-left: 10px;
+}
+
+.content .home .container .empty .empty__text{
+	font-size: 20px;
+	font-style: italic;
+}
+
+.content .home .container .empty .empty__add{
+	background: green;
+	color: #FFF;
+	padding: 10px;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+.content .home .container .empty .empty__add:hover{
+	background: darkgreen;
+	color: lightgreen;
+	transition: 0.4s ease;
+}
+
 /* -------------------------------- */
 
 /* -------- Página ACCOUNT -------- */
 .content .account__add{
-	width:100%;
-}
-.account__add h1{
 	width: 100%;
-	color:gray;
-	background-color:rgba(220,220,220,0.5);
+}
+.content .account__add h1{
+	color: gray;
+	background-color: rgba(220,220,220,0.5);
 	font-size: 25px;
-	padding:10px 15px;
+	padding: 10px 15px;
 	font-weight: bold;
 	font-family: Helvetica;
 }
 
-.account__form label{
-	padding:10px 0;
+.content .container .account__form label{
+	font-size: 20px;
+	padding: 10px 0;
 }
 
-.account__form input, .account__form select{
-	width:25%;
+.content .container .account__form input, 
+.content .container .account__form select{
+	width: 25%;
 }
 
-.account__form .btn{
-	margin-top:50px;
+.content .container .account__form .btn{
+	margin-top: 50px;
 }
+
+.content .list{
+	width: 100%;
+}
+
+.content .list h1{
+	width: 100%;
+	color: gray;
+	background-color:rgba(220,220,220,0.5);
+	font-size: 25px;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+.content .list table{
+	text-align: center;
+}
+
+.content .list table a{
+	color: #FFF;
+}
+
+.content .list .empty{
+	background: #FFF;
+	line-height: 3;
+	padding-left: 10px;
+}
+
+.content .list .empty .empty__text{
+	font-size: 20px;
+	font-style: italic;
+}
+
+.content .list .empty .empty__add{
+	background: green;
+	color: #FFF;
+	padding: 10px;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+.content .list .empty .empty__add:hover{
+	background: darkgreen;
+	color: lightgreen;
+	transition: 0.4s ease;
+}
+
+.content .update{
+	width: 100%;
+}
+
+.content .update h1{
+	color: gray;
+	background-color: rgba(220,220,220,0.5);
+	font-size: 25px;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+.content .update label{
+	font-size: 20px;
+	padding: 10px 0;
+}
+
+.content .update input, 
+.content .update select{
+	width: 25%;
+}
+
+.content .update .btn{
+	margin-top: 50px;
+}
+
+.content .deposit{
+	width: 100%;
+}
+
+.content .deposit h1{
+	color: gray;
+	background-color: rgba(220,220,220,0.5);
+	font-size: 25px;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+.content .deposit .container .deposit__abstract{
+	-webkit-background: linear-gradient(darkgreen, lightgreen);
+	-moz-background: linear-gradient(darkgreen, lightgreen);
+	background: linear-gradient(darkgreen, lightgreen);
+	margin-bottom: 30px;
+	padding: 10px 0px;
+	text-align: center;
+	box-shadow: 0 3px 2px 1px rgba(0,0,0,0.5);
+	color: #FFF;
+}
+
+.content .deposit .container .deposit__abstract h2,
+.content .deposit .container .deposit__abstract h4{
+	font-family: Helvetica;
+}
+
+.content .deposit .container .deposit__form label{
+	font-size: 22px;
+	padding: 10px 0;
+}
+
+.content .deposit .container .deposit__form .btn{
+	margin-top: 25px;
+}
+
+.content .retire{
+	width: 100%;
+}
+
+.content .retire h1{
+	color: gray;
+	background-color:rgba(220,220,220,0.5);
+	font-size: 25px;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+.content .retire .container .retire__abstract{
+	-webkit-background: linear-gradient(darkgreen, lightgreen);
+	-moz-background: linear-gradient(darkgreen, lightgreen);
+	background: linear-gradient(darkgreen, lightgreen);
+	margin-bottom: 30px;
+	padding: 10px 0px;
+	text-align: center;
+	box-shadow: 0 3px 2px 1px rgba(0,0,0,0.5);
+	color: #FFF;
+}
+
+.content .retire .container .retire__abstract h2,
+.content .retire .container .retire__abstract h4{
+	font-family: Helvetica;
+}
+
+.content .retire .container .retire__form label{
+	font-size: 22px;
+	padding: 10px 0;
+}
+
+.content .retire .container .retire__form .btn{
+	margin-top: 25px;
+}
+
 /* -------------------------------- */
 
 /* -------- Componente HEADER (Main) -------- */
@@ -150,17 +318,17 @@
 }
 
 .header .header__logo{
-	width:120px;
+	width: 120px;
 }
 
 .header .header__user ul{
-	padding:0;
+	padding: 0;
 	margin: 0;
 }
 
 .header .header__user ul li a{
 	text-decoration: none;
-	color:#FFF;
+	color: #FFF;
 	display: block;
 }
 
@@ -172,7 +340,7 @@
 
 .header .header__user ul li ul{
 	position: absolute;
-	right:0;
+	right: 0;
 	padding: 0;
 	color:#000;
 	width: 200px;
@@ -198,11 +366,9 @@
 .side-bar{
 	background: rgb(192,192,192);
 	width: 20%;
-	height: 100vh;
-	overflow-y: auto;
-	margin-top:60px;
-	color:navy;
-	height:auto;
+	margin-top: 60px;
+	color: navy;
+	
 }
 
 .side-bar .menu{
@@ -229,7 +395,7 @@
 	line-height: 60px;
 	transition: 0.3s ease;
 	font-family: Helvetica;
-	color:darkblue;
+	color: darkblue;
 
 }
 
