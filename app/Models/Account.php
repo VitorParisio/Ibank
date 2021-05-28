@@ -12,8 +12,4 @@ class Account extends Model
 
 	public $timestamps = false;
 
-	public function historic(){
-		return $this->hasMany(Historic::class);
-	}
-
 }

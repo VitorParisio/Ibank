@@ -1,9 +1,9 @@
 $(function() {
 
 	/*----- Menu User ----- */
-	$('.active').hide();
+	$('.account_active').hide();
   	$('.account').on('click', function(){
-  		$('.active').toggle('fast');
+  		$('.account_active').toggle('fast');
   	});
   	/*---------- */
 
@@ -12,6 +12,10 @@ $(function() {
   		$(this).next('.sub-item').slideToggle();
   		$(this).find('.dropdown').toggleClass('rolate');
   	});
+
+    $('.menu_bar').on('click', function(){
+      $('.side-bar').toggleClass('show');
+    });
   	/*---------- */
 });
 

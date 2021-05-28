@@ -32,7 +32,7 @@ class AccountDAO
 
 		$amount = str_replace(",", ".", $amount);
 
-		if($agency < 0 || $account_number < 0 || $amount < 0 ){
+		if($agency < 0 || $account_number < 0 || $amount < 0){
 			return back()->with('error', 'Preencha os campos corretamente!');
 		}
 
@@ -56,7 +56,7 @@ class AccountDAO
 	   	$account_list = Account::join('users', 'users.id', '=', 'accounts.user_id')
 	   						->select('accounts.id','accounts.name', 'accounts.agency', 'accounts.account_number',	  'accounts.type','accounts.amount')
 	   						->where('users.id', $user_id)
-	   						->get();
+	   						->paginate(8);
 
 	   	return view('bank.pages.account.list', compact('account_list', 'title'));
 	}

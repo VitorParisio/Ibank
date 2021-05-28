@@ -183,6 +183,7 @@ return [
         App\Providers\LoginServiceProvider::class,
         App\Providers\AccountServiceProvider::class,
         App\Providers\HistoricServiceProvider::class,
+        App\Providers\HomeServiceProvider::class,
 
     ],
 
@@ -237,7 +238,8 @@ return [
         // Custom Aliases 
         'Login' => App\Facades\Login::class,
         'Account' => App\Facades\Account::class,
-        'Historic' => App\Facades\Account::class,
+        'Historic' => App\Facades\Historic::class,
+        'Home' => App\Facades\Home::class,
 
     ],
 

@@ -8,20 +8,55 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
-	
 }
 
 .main{
 	display: flex;
-	flex:1;
+	flex: 1;
+	width: 100vw;
 	height: 100vh;
 }
 
 .content{
 	display: flex;
+	flex: 1;
 	margin-top: 60px;
 	width: 100%;
-	background-color:rgba(220,220,220,0.4);
+}
+
+.pagination{
+	position: absolute; 
+	bottom: 0; 
+	margin-bottom: 200px;
+}
+
+.accept{
+	 position: absolute; 
+	 margin-top: 20px; 
+	 left:0; text-align: center; 
+	 font-family: sans-serif; 
+	 font-weight: bold; 
+	 padding: 10px; 
+	 bottom: 0; 
+	 width: 100%; 
+	 background: green; 
+	 color: #FFF; 
+	 z-index: 777;
+}
+
+.error{
+	position: absolute; 
+	margin-top: 20px; 
+	left: 0; 
+	text-align: center; 
+	font-family: sans-serif; 
+	font-weight: bold; 
+	padding: 10px; 
+	bottom: 0; 
+	width: 100%; 
+	background: red; 
+	color:#FFF;
+	z-index: 777;
 }
 /* -------------------------------- */
 
@@ -58,17 +93,11 @@
 	font-size: 18px;
 }
 
-@media (max-width: 800px) {
-	.login .login__logo{
-		width: 100%;
-	}
-}
 /* -------------------------------- */
 
 /* -------- Página HOME -------- */
 .content .home{
 	width: 100%;
-	background-color: rgba(220,220,220,0.4);
 }
 
 .content .home h1{
@@ -80,12 +109,14 @@
 
 .content .home .container h2{
 	border-bottom: 1px solid rgba(0,0,0,0.1);
-	font-family: serif;
+	font-family: Helvetica;
 }
 
 .content .home .container .group_card{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: center;
+	z-index: -1;
 }
 
 .content .home .container .group_card .card{
@@ -93,12 +124,11 @@
 	-moz-background: linear-gradient(darkgreen, lightgreen);
 	background: linear-gradient(darkgreen, lightgreen);
 	color: #FFF;
-	margin:10px;
+	margin: 10px;
 	box-shadow: 0 3px 2px 1px rgba(0,0,0,0.3);
 }
 
 .content .home .container .empty{
-	background: #FFF;
 	line-height: 3;
 	padding-left: 10px;
 }
@@ -158,7 +188,7 @@
 .content .list h1{
 	width: 100%;
 	color: gray;
-	background-color:rgba(220,220,220,0.5);
+	background-color: rgba(220,220,220,0.5);
 	font-size: 25px;
 	padding: 10px 15px;
 	font-weight: bold;
@@ -173,18 +203,17 @@
 	color: #FFF;
 }
 
-.content .list .empty{
-	background: #FFF;
+.content .list .container .empty{
 	line-height: 3;
 	padding-left: 10px;
 }
 
-.content .list .empty .empty__text{
+.content .list .container  .empty .empty__text{
 	font-size: 20px;
 	font-style: italic;
 }
 
-.content .list .empty .empty__add{
+.content .list .container  .empty .empty__add{
 	background: green;
 	color: #FFF;
 	padding: 10px;
@@ -192,7 +221,7 @@
 	margin-left: 10px;
 }
 
-.content .list .empty .empty__add:hover{
+.content .list .container .empty .empty__add:hover{
 	background: darkgreen;
 	color: lightgreen;
 	transition: 0.4s ease;
@@ -251,7 +280,8 @@
 
 .content .deposit .container .deposit__abstract h2,
 .content .deposit .container .deposit__abstract h4{
-	font-family: Helvetica;
+	font-family: serif;
+	font-weight: bold;
 }
 
 .content .deposit .container .deposit__form label{
@@ -289,7 +319,8 @@
 
 .content .retire .container .retire__abstract h2,
 .content .retire .container .retire__abstract h4{
-	font-family: Helvetica;
+	font-family: serif;
+	font-weight: bold;
 }
 
 .content .retire .container .retire__form label{
@@ -317,6 +348,15 @@
 	position: absolute;
 }
 
+.header .menu_bar{
+	position: absolute;
+	top: 15px;
+	left: 10px;
+	font-size: 30px;
+	color: #FFF;
+	display: none;
+}
+
 .header .header__logo{
 	width: 120px;
 }
@@ -333,7 +373,7 @@
 }
 
 .header .header__user ul li a:hover{
-	color:#FFF;
+	color: #FFF;
 	display: block;
 	cursor: pointer;
 }
@@ -344,10 +384,9 @@
 	padding: 0;
 	color:#000;
 	width: 200px;
-	background: rgba(0,0,0, 0.3);
-	text-align: left;
+	background: rgba(0,0,0, 0.7);
 	border-top: 1px solid rgba(192,192,192, 0.4);
-	margin-top: 23px;
+	margin-top: 18px;
 	text-align: center;
 }
 
@@ -368,7 +407,6 @@
 	width: 20%;
 	margin-top: 60px;
 	color: navy;
-	
 }
 
 .side-bar .menu{
@@ -381,6 +419,7 @@
 	text-align: center;
 	padding: 10px 0;
  	border-bottom: 1px solid rgba(0,0,0,0.1);
+ 	z-index: 999;
 }
 
 .side-bar .menu .item{
@@ -428,9 +467,141 @@
 .rolate{
 	transform: rotate(90deg);
 }
-
 /* -------------------------------- */
 
+/* -------- Responsividade (Media Query) -------- */
+@media (max-width: 800px) {
+	.main{
+		position: absolute;
+		display: block;
+	}
 
+	.content {
+		text-align: center;
+		margin-top: 100px;
+	}
+
+	.login .login__logo{
+		width: 100%;
+	}
+
+	.account__form input, 
+	.account__form select{
+		width: 100% !important;
+	}
+
+	.list table{
+		border: none;
+	}
+
+	.list table thead{
+		display: none;
+	}
+
+	.list tbody tr{
+		margin-bottom: 10px;
+		display: block;
+	}
+
+	.list table tbody tr td{
+		display: block;
+		text-align: right;
+		border: none;
+	}
+
+	.list table tbody tr td:before{
+		content: attr(data-title);
+		position: absolute;
+		display: block;
+		font-weight: bold;
+	}
+
+	.update input, 
+	.update select{
+		width: 100% !important;
+	}
+
+	.deposit__form .btn,
+	.retire__form .btn{
+		margin-top: 25px;
+	}
+
+	.header{
+		flex:1;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		height: 100px;	
+	}
+
+	.header .menu_bar{
+		display: block;
+	}
+
+	.side-bar{
+		display: none;
+	}
+
+	.side-bar.show{
+		display: block;
+		position: absolute;
+		z-index: 999;
+		width: 100%;
+		height: 100%;
+	}
+
+	.group_card{
+		margin-bottom: 30px;
+	}
+
+	.card{
+		display: flex;
+		flex: 1 200px;
+	}
+
+	.empty{
+		display: flex;
+		flex-direction: column;
+	}
+
+	.pagination {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+
+	@media (min-width: 338px){
+		.header{
+			display: flex;
+			justify-content: space-evenly;
+			padding: 0 1px;
+		}
+
+		.header .header__user ul li ul{
+			width: 100%;
+			z-index: 888;
+			margin-top: 35px;
+		}
+
+		.side-bar.show{
+			margin: 100px 0;
+			width: 70%;
+		}
+
+	}
+
+	@media (max-width: 337px){
+		.header{
+			display: flex;
+			justify-content: center;
+		}
+
+		.header .header__user ul li ul{
+			width: 100%;
+			z-index: 888;
+			margin-top: 15px;
+		}
+	}
+
+}
 
 

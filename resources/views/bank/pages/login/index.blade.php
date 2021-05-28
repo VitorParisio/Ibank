@@ -21,7 +21,7 @@
 			@if($message = Session::get('error'))
 				<div id="error"></div>
 				<script type="text/javascript">
-					document.getElementById("error").innerHTML = "<span style='position:absolute; margin-top:20px; left:0; text-align:center; font-family: sans-serif; font-weight:bold; padding: 10px; bottom:0; width:100%; background-color:#FFF;'>{{$message}}</span>";
+					document.getElementById("error").innerHTML = "<span class='error'>{{$message}}</span>";
 					setInterval(() => {
 						document.getElementById("error").innerHTML = "";
 					}, 3000)
