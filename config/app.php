@@ -179,12 +179,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        // Custom Providers 
-        App\Providers\LoginServiceProvider::class,
-        App\Providers\AccountServiceProvider::class,
-        App\Providers\HistoricServiceProvider::class,
-        App\Providers\HomeServiceProvider::class,
-
     ],
 
     /*
@@ -234,12 +228,6 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 		'Form' => Collective\Html\FormFacade::class,
 		'Html' => Collective\Html\HtmlFacade::class,
-        
-        // Custom Aliases 
-        'Login' => App\Facades\Login::class,
-        'Account' => App\Facades\Account::class,
-        'Historic' => App\Facades\Historic::class,
-        'Home' => App\Facades\Home::class,
 
     ],
 
