@@ -62,4 +62,14 @@ class Handler extends ExceptionHandler
 
         return redirect()->guest('/');
     }
+
+    public function render($request, Exception $exception){
+        if($this->isHttpException($exception)){
+            $code = $e->getStatusCode();
+            if ($code == 404) {
+                return response()->view('bank.pages.404')
+            }
+        }
+        return parent::render($request, $exception);
+    }
 }

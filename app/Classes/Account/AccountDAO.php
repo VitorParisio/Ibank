@@ -233,7 +233,7 @@ class AccountDAO
 	public function transfer($id){
 		$account_dto   = new AccountDTO();
 	   	$account_model = Account::find($id);
-	   	$title         = "IBank - Editar";
+	   	$title         = "IBank - Trasnferir";
 		$account_dto->setName($account_model->name);
 		$account_dto->setAmount($account_model->amount);
 
@@ -261,7 +261,7 @@ class AccountDAO
 				   ->with('error', "Não é possível transferir para você!");
 		}	
 
-		return view('bank.pages.account.confirm', compact('id', 'sender'));					 
+		return view('bank.pages.account.confirm', compact('id', 'sender','title'));					 
 								 
 	}
 

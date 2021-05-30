@@ -17,7 +17,7 @@
 						      <th scope="col">Depositar</th>
 						      <th scope="col">Sacar</th>
 						       <th scope="col">Transferir</th>
-						    </tr>
+						    </tr> 
 						</thead>
 						<tbody>
 						@forelse($balance_account as $value)
