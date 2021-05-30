@@ -16,7 +16,7 @@
 						{!! Form::open(['route' => ['retire.update', $id], 'method'=> 'post']) !!}
 						
 							<label for="retire"><strong>Valor a sacar:</strong></label>
-							{!! Form::text('retire', null, ['class' => 'form-control shadow-none', 'placeholder' => 'Ex: 100,50', 'required', 'pattern' => '^-?[0-9][0-9,\.]*$']) !!}
+							{!! Form::text('retire', null, ['class' => 'form-control shadow-none', 'placeholder' => 'Ex: 100,50', 'autocomplete' => 'off', 'required', 'pattern' => '^-?[0-9][0-9,\.]*$']) !!}
 
 							{!! Form::submit('SACAR', ['class' => 'btn btn-danger']) !!}
 						{!! Form::close() !!}

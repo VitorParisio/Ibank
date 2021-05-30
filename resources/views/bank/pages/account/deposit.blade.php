@@ -14,8 +14,9 @@
 					</div>
 					<div class="deposit__form">
 						{!! Form::open(['route' => ['deposit.update', $id], 'method'=> 'post']) !!}
+
 							<label for="deposit"><strong>Valor a depositar:</strong></label>
-							{!! Form::text('deposit', null, ['class' => 'form-control shadow-none', 'placeholder' => 'Ex: 100,50', 'required', 'pattern' => '^-?[0-9][0-9,\.]*$']) !!}
+							{!! Form::text('deposit', null, ['class' => 'form-control shadow-none', 'placeholder' => 'Ex: 100,50', 'autocomplete' => 'off', 'required', 'pattern' => '^-?[0-9][0-9,\.]*$']) !!}
 
 							{!! Form::submit('Depositar', ['class' => 'btn btn-primary']) !!}
 						{!! Form::close() !!}

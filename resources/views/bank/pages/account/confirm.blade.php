@@ -16,10 +16,10 @@
 						{!! Form::open(['route' => ['transfer.store', $id], 'method'=> 'post']) !!}
 
 							<label for="bank"><strong>Nome do Banco:</strong></label>
-							{!! Form::text('bank', null, ['class' => 'form-control shadow-none', 'placeholder' => 'Ex: Bradesco', 'required']) !!}
+							{!! Form::text('bank', null, ['class' => 'form-control shadow-none', 'placeholder' => 'Ex: Bradesco', 'required', 'autocomplete' => 'off']) !!}
 
 							<label for="confirm"><strong>Valor a transferir:</strong></label>
-							{!! Form::text('balance', null, ['class' => 'form-control shadow-none', 'placeholder' => 'Ex: 100,50', 'required', 'pattern' => '^-?[0-9][0-9,\.]*$']) !!}
+							{!! Form::text('balance', null, ['class' => 'form-control shadow-none', 'placeholder' => 'Ex: 100,50', 'autocomplete' => 'off', 'required', 'pattern' => '^-?[0-9][0-9,\.]*$']) !!}
 
 							{!! Form::hidden('sender_id', $sender->id) !!}
 

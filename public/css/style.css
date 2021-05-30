@@ -33,12 +33,13 @@
 .accept{
 	 position: absolute; 
 	 margin-top: 20px; 
-	 left:0; text-align: center; 
+	 right: 0; 
+	 text-align: center; 
 	 font-family: sans-serif; 
 	 font-weight: bold; 
 	 padding: 10px; 
 	 bottom: 0; 
-	 width: 100%; 
+	 width: 80%; 
 	 background: green; 
 	 color: #FFF; 
 	 z-index: 777;
@@ -47,13 +48,13 @@
 .error{
 	position: absolute; 
 	margin-top: 20px; 
-	left: 0; 
+	right: 0; 
 	text-align: center; 
 	font-family: sans-serif; 
 	font-weight: bold; 
 	padding: 10px; 
 	bottom: 0; 
-	width: 100%; 
+	width: 80%; 
 	background: red; 
 	color:#FFF;
 	z-index: 777;
@@ -83,7 +84,7 @@ table a{
 }
 /* -------------------------------- */
 
-/* -------- Página LOGIN -------- */
+/* -------- PAGE LOGIN -------- */
 .login{
 	width: 100vw;
 	height: 100vh;
@@ -118,7 +119,7 @@ table a{
 
 /* -------------------------------- */
 
-/* -------- Página HOME -------- */
+/* -------- PAGE HOME -------- */
 .content .home{
 	width: 100%;
 }
@@ -176,7 +177,36 @@ table a{
 }
 /* -------------------------------- */
 
-/* -------- Página ACCOUNT -------- */
+/* -------- PAGE REGISTER -------- */
+
+.content .register{
+	width: 100%;
+}
+.content .register h1{
+	color: gray;
+	background-color: rgba(220,220,220,0.5);
+	font-size: 25px;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+.content .container .register__form label{
+	font-size: 20px;
+	padding: 10px 0;
+}
+
+.content .container .register__form input, 
+.content .container .register__form select{
+	width: 25%;
+}
+
+.content .container .register__form .btn{
+	margin-top: 50px;
+}
+/* -------------------------------- */
+
+/* -------- PAGE ACCOUNT -------- */
 .content .account__add{
 	width: 100%;
 }
@@ -389,7 +419,7 @@ table a{
 }
 /* -------------------------------- */
 
-/* -------- Página HISTORIC -------- */
+/* -------- PAGE HISTORIC -------- */
 .content .historic{
 	width: 100%;
 }
@@ -401,6 +431,16 @@ table a{
 	padding: 10px 15px;
 	font-weight: bold;
 	font-family: Helvetica;
+}
+
+.content .historic .container .empty{
+	line-height: 3;
+	padding-left: 10px;
+}
+
+.content .historic .container .empty .empty__text{
+	font-size: 20px;
+	font-style: italic;
 }
 /* -------------------------------- */
 
@@ -584,10 +624,21 @@ table a{
 		font-size: 17px;
 	}
 
+	.accept{
+		width: 100%;
+	}
+
+	.error{
+		width: 100%;
+	}
 	/* -------------------------------- */
 
 	.login .login__logo{
 		width: 100%;
+	}
+
+	.register input{
+		width:100% !important;
 	}
 
 	.account__form input, 
@@ -679,6 +730,7 @@ table a{
 			z-index: 888;
 			margin-top: 15px;
 		}
+
 	}
 
 }

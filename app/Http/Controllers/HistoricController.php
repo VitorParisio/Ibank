@@ -11,6 +11,10 @@ class HistoricController extends Controller
     	return Historic::index();
     }
 
+     public function chart(){
+    	return Historic::chart();
+    }
+
 	public function del($id){
         return Historic::del($id);
 	}

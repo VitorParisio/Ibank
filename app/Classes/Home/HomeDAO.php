@@ -10,7 +10,7 @@ class HomeDAO
 	{
 		$home_dto = new HomeDTO();
 		$user     = Auth::user()->id;
-
+		$title    = "IBank - Home";
 		$home_dto->setUser($user);
 
 		$user_id = $home_dto->getUser($user);
@@ -20,7 +20,7 @@ class HomeDAO
 	   						->where('users.id', $user_id)
 	   						->paginate(8);
 
-		return view('bank.pages.home.index', compact('balance_account'));
+		return view('bank.pages.home.index', compact('balance_account', 'title'));
 	}
 
 	public function logout(){

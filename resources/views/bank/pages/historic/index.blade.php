@@ -59,5 +59,10 @@
 				@include('bank.includes.alert')
 			</div>
 		</section>
+		<script type="text/javascript">
+			var test = <?php echo $amount; ?>;
+
+			console.log(test);
+		</script>
 	</div>
 @endsection

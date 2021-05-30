@@ -184,6 +184,7 @@ return [
         App\Providers\AccountServiceProvider::class,
         App\Providers\HistoricServiceProvider::class,
         App\Providers\HomeServiceProvider::class,
+        App\Providers\RegisterServiceProvider::class,
 
     ],
 
@@ -240,6 +241,7 @@ return [
         'Account' => App\Facades\Account::class,
         'Historic' => App\Facades\Historic::class,
         'Home' => App\Facades\Home::class,
+        'Register' => App\Facades\Home::class,
     ],
 
 ];

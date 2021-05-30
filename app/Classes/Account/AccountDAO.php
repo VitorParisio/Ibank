@@ -41,16 +41,14 @@ class AccountDAO
 			return back()->with('error', 'Preencha os campos corretamente!');
 		}
 
-		$account_model = Account::create([
+		$account_create = Account::create([
 			'user_id'        => $user_id,
 			'name'           => $name,
 			'agency'         => $agency,
 			'account_number' => $account_number,
 			'type'           => $type,
-			'amount'         => $amount
+			'amount'         => $amount,
 		]);
-
-		$account_model->save();
 
 		return back()->with('accept', 'Conta cadastrada com sucesso!');
 	}
@@ -108,8 +106,13 @@ class AccountDAO
 		$amount         = $account_dto->getAmount();
 
 		$amount = str_replace(",", ".", $amount);
-		$data   = ['name' => $name, 'agency' => $agency, 'account_number' => $account_number, 
-				  'type' => $type, 'amount' => $amount];
+		$data   = [
+			'name'           => $name, 
+			'agency'         => $agency, 
+			'account_number' => $account_number, 
+		    'type'           => $type, 
+		    'amount'         => $amount,
+		];
 
 		if($agency < 0 || $account_number < 0 || $amount < 0 ){
 			return back()->with('error', 'Preencha os campos corretamente!');
@@ -167,7 +170,6 @@ class AccountDAO
  	 	]);
 
 		$account_model->save();
-		$historic_model->save();
 
 		return back()->with('accept', 'Deposito realizado com sucesso!');
 	}
@@ -232,7 +234,6 @@ class AccountDAO
 		$account_dto   = new AccountDTO();
 	   	$account_model = Account::find($id);
 	   	$title         = "IBank - Editar";
-
 		$account_dto->setName($account_model->name);
 		$account_dto->setAmount($account_model->amount);
 
@@ -274,25 +275,31 @@ class AccountDAO
 							 	->first();
 		$senderId = User::find($sender);
 
-		$userId = User::find(auth()->user()->id);
+		$userId   = User::find(auth()->user()->id);
 
-		$balance = str_replace(",", ".", $balance);
+		$balance  = str_replace(",", ".", $balance);
 		
 		$account_dto->setAmount($user_bank->amount);
 
 		$user_amount = $account_dto->getAmount();
 		
-			if($user_amount < $balance){
-				return redirect()
-					   ->route('transfer', [$id])
-					   ->with('error', 'Saldo insufiente!');
-			}
+		if($user_amount < $balance){
+			return redirect()
+				   ->route('transfer', [$id])
+				   ->with('error', 'Saldo insufiente!');
+		}
 
-			if(!$sender_bank){
-				return redirect()
-						->route('transfer', [$id])
-						->with('error', "Banco não encontrado!");
-			}
+		if(!$sender_bank){
+			return redirect()
+					->route('transfer', [$id])
+					->with('error', "Banco não encontrado!");
+		}
+
+		if($balance < 0){
+			return redirect()
+					->route('transfer', [$id])
+					->with('error', 'Preencha o campo corretamente!');
+		}
 
 		$historic_dto->setAccountId($user_bank->id);
 		$historic_dto->setType('Transferência');

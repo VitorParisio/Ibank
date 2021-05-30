@@ -6,6 +6,11 @@ $this->post('checklogin', 'LoginController@checkLogin')->name('check.login');
 
 /* --- Rotas -> Group --- */
 Route::group(['middleware' => 'auth'], function () {
+
+	/* --- Rotas -> Register --- */
+	$this->get('register', 'RegisterController@index')->name('register.index');
+	$this->post('register', 'RegisterController@register')->name('register');
+
 	/* --- Rotas -> Home --- */
     $this->get('home', 'HomeController@index')->name('home');
 	$this->get('logout', 'HomeController@logout')->name('logout');

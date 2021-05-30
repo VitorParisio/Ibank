@@ -14,6 +14,7 @@
 					</div>
 					<div class="transfer__form">
 						{!! Form::open(['route' => ['confirm', $id], 'method'=> 'post']) !!}
+						
 							<label for="transfer"><strong>Destinatário:</strong></label>
 							{!! Form::text('sender', null, ['class' => 'form-control shadow-none', 'placeholder' => 'Informe quem receberá a transferência (Nome ou Email).', 'required', 'autocomplete' => 'off']) !!}
 

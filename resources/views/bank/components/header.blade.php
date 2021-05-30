@@ -9,13 +9,14 @@
 		<ul>
 			<li>
 				<a class="account">
-					<i class="fas fa-user"></i> {{ Auth::user()->name }} 
+					<i class="fas fa-user"></i> 
+						{{ ucfirst(Auth::user()->name) }} {{ucfirst(Auth::user()->lastname)}}
 					<i class="fas fa-sort-down" style="font-size: 15px;"></i>
 				</a>
 				<ul class="account_active">
 					<li>
-						<a href="#">
-							<i class="far fa-user-circle"></i> Minha Conta
+						<a href="{{route('register')}}">
+							<i class="far fa-user-circle"></i> Novo usuário
 						</a>
 					</li>
 					<li>

@@ -6,7 +6,7 @@
 		@include('bank.components.sidebar')
 		<section class="content">
 			<div class="home">
-				<h1>Bem-vindo(a), <b>{{ucfirst(Auth::user()->name)}}!</b></h1>
+				<h1>Bem-vindo(a), <b>{{ucfirst(Auth::user()->name)}} {{ucfirst(Auth::user()->lastname)}}!</b></h1>
 				<div class="container">
 					<h2>Bancos e Saldos</h2>
 					<table class="table">
