@@ -20,6 +20,13 @@ Route::group(['middleware' => 'auth'], function () {
 	$this->post('deposit/{id}', 'AccountController@deposit_update')->name('deposit.update');
 	$this->get('retire/{id}', 'AccountController@retire_edit')->name('retire.edit');
 	$this->post('retire/{id}', 'AccountController@retire_update')->name('retire.update');
+	$this->get('transfer/{id}', 'AccountController@transfer')->name('transfer');
+	$this->post('confirm/{id}', 'AccountController@confirm')->name('confirm');
+	$this->post('transfer/{id}', 'AccountController@transfer_store')->name('transfer.store');
 	$this->get('delete/{id}', 'AccountController@delete')->name('delete');
+
+	/* --- Rotas -> Historic --- */
+	$this->get('historic', 'HistoricController@index')->name('historic');
+	$this->get('del/{id}', 'HistoricController@del')->name('del');
 });
 

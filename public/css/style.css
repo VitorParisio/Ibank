@@ -58,6 +58,29 @@
 	color:#FFF;
 	z-index: 777;
 }
+
+table{
+	text-align: center;
+	font-size: 20px;
+	background: rgba(169,169,169, 1);
+	color:#FFF;
+}
+
+table thead{
+	background: green;
+	color: #FFF;
+}
+table tbody tr{
+	color:#FFF;
+	font-family: Arial;
+}
+table tbody tr:nth-child(even) {
+	background-color: rgba(0,0,0,0.5);
+}
+
+table a{
+	color: #FFF;	
+}
 /* -------------------------------- */
 
 /* -------- Página LOGIN -------- */
@@ -109,7 +132,7 @@
 
 .content .home .container h2{
 	border-bottom: 1px solid rgba(0,0,0,0.1);
-	font-family: Helvetica;
+	font-family: Arial;
 }
 
 .content .home .container .group_card{
@@ -151,7 +174,6 @@
 	color: lightgreen;
 	transition: 0.4s ease;
 }
-
 /* -------------------------------- */
 
 /* -------- Página ACCOUNT -------- */
@@ -193,14 +215,6 @@
 	padding: 10px 15px;
 	font-weight: bold;
 	font-family: Helvetica;
-}
-
-.content .list table{
-	text-align: center;
-}
-
-.content .list table a{
-	color: #FFF;
 }
 
 .content .list .container .empty{
@@ -268,14 +282,8 @@
 }
 
 .content .deposit .container .deposit__abstract{
-	-webkit-background: linear-gradient(darkgreen, lightgreen);
-	-moz-background: linear-gradient(darkgreen, lightgreen);
-	background: linear-gradient(darkgreen, lightgreen);
-	margin-bottom: 30px;
-	padding: 10px 0px;
-	text-align: center;
-	box-shadow: 0 3px 2px 1px rgba(0,0,0,0.5);
-	color: #FFF;
+	margin-bottom: 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .content .deposit .container .deposit__abstract h2,
@@ -306,15 +314,9 @@
 	font-family: Helvetica;
 }
 
-.content .retire .container .retire__abstract{
-	-webkit-background: linear-gradient(darkgreen, lightgreen);
-	-moz-background: linear-gradient(darkgreen, lightgreen);
-	background: linear-gradient(darkgreen, lightgreen);
-	margin-bottom: 30px;
-	padding: 10px 0px;
-	text-align: center;
-	box-shadow: 0 3px 2px 1px rgba(0,0,0,0.5);
-	color: #FFF;
+.content .deposit .container .deposit__abstract{
+	margin-bottom: 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 
 .content .retire .container .retire__abstract h2,
@@ -332,6 +334,74 @@
 	margin-top: 25px;
 }
 
+.content .transfer{
+	width: 100%;
+}
+
+.content .transfer h1{
+	color: gray;
+	background-color:rgba(220,220,220,0.5);
+	font-size: 25px;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+.content .transfer .container .transfer__abstract{
+	margin-bottom: 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.content .transfer .container .transfer__form label{
+	font-size: 22px;
+	padding: 10px 0;
+}
+
+.content .transfer .container .transfer__form .btn{
+	margin-top: 25px;
+}
+
+.content .confirm{
+	width: 100%;
+}
+
+.content .confirm h1{
+	color: gray;
+	background-color:rgba(220,220,220,0.5);
+	font-size: 25px;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
+
+.content .confirm .container .confirm__abstract{
+	margin-bottom: 20px;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.content .confirm .container .confirm__form label{
+	font-size: 22px;
+	padding: 15px 0;
+}
+
+.content .confirm .container .confirm__form .btn{
+	margin-top: 25px;
+}
+/* -------------------------------- */
+
+/* -------- Página HISTORIC -------- */
+.content .historic{
+	width: 100%;
+}
+
+.content .historic h1{
+	color: gray;
+	background-color: rgba(220,220,220,0.5);
+	font-size: 25px;
+	padding: 10px 15px;
+	font-weight: bold;
+	font-family: Helvetica;
+}
 /* -------------------------------- */
 
 /* -------- Componente HEADER (Main) -------- */
@@ -471,6 +541,8 @@
 
 /* -------- Responsividade (Media Query) -------- */
 @media (max-width: 800px) {
+	/* -------- RESET -------- */
+
 	.main{
 		position: absolute;
 		display: block;
@@ -481,6 +553,39 @@
 		margin-top: 100px;
 	}
 
+	table{
+		border: none;
+	}
+
+	table thead{
+		display: none;
+	}
+
+	table tbody tr{
+		display: block;
+	}
+
+	table tbody tr:nth-child(even) {
+		background-color: rgba(0,0,0,0.5);
+	}
+
+	table tbody tr td{
+		display: block;
+		text-align: right;
+		font-size: 20px;
+		margin:10px 0;
+	}
+
+	table tbody tr td:before{
+		content: attr(data-title);
+		position: absolute;
+		display: block;
+		font-weight: bold;
+		font-size: 17px;
+	}
+
+	/* -------------------------------- */
+
 	.login .login__logo{
 		width: 100%;
 	}
@@ -488,32 +593,6 @@
 	.account__form input, 
 	.account__form select{
 		width: 100% !important;
-	}
-
-	.list table{
-		border: none;
-	}
-
-	.list table thead{
-		display: none;
-	}
-
-	.list tbody tr{
-		margin-bottom: 10px;
-		display: block;
-	}
-
-	.list table tbody tr td{
-		display: block;
-		text-align: right;
-		border: none;
-	}
-
-	.list table tbody tr td:before{
-		content: attr(data-title);
-		position: absolute;
-		display: block;
-		font-weight: bold;
 	}
 
 	.update input, 

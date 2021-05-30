@@ -240,7 +240,6 @@ return [
         'Account' => App\Facades\Account::class,
         'Historic' => App\Facades\Historic::class,
         'Home' => App\Facades\Home::class,
-
     ],
 
 ];

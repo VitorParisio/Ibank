@@ -6,7 +6,7 @@
 		@include('bank.components.sidebar')
 		<section class="content">
 				<div class="update">
-					<h1>Atualizar conta</h1>
+					<h1>ATUALIZAR CONTA</h1>
 					<div class="container">
 						<div class="update__form">
 							{!! Form::open(['route' => ['list.update', $id], 'method'=> 'put']) !!}
@@ -30,23 +30,7 @@
 						</div>
 					</div>
 				</div>
-				@if($message = Session::get('accept'))
-					<div id="accept"></div>
-					<script type="text/javascript">
-						document.getElementById("accept").innerHTML = "<span class='accept'>{{$message}}</span>";
-						setInterval(() => {
-							document.getElementById("accept").innerHTML = "";
-						}, 3000)
-					</script>
-				@elseif($message = Session::get('error'))
-					<div id="error"></div>
-					<script type="text/javascript">
-						document.getElementById("error").innerHTML = "<span class='error'>{{$message}}</span>";
-						setInterval(() => {
-							document.getElementById("error").innerHTML = "";
-						}, 3000)
-					</script>
-				@endif
+				@include('bank.includes.alert')
 		</section>
 	</div>
 @endsection

@@ -7,10 +7,22 @@
 	</div>
 	<div class="header__user">
 		<ul>
-			<li><a class="account"><i class="fas fa-user"></i> {{ Auth::user()->name }} <i class="fas fa-sort-down" style="font-size: 15px;"></i></a>
+			<li>
+				<a class="account">
+					<i class="fas fa-user"></i> {{ Auth::user()->name }} 
+					<i class="fas fa-sort-down" style="font-size: 15px;"></i>
+				</a>
 				<ul class="account_active">
-					<li><a href="#"><i class="far fa-user-circle"></i> Minha Conta</a></li>
-					<li><a href="{{url('/logout')}}"><i class="fas fa-sign-out-alt"></i> Sair</a></li>
+					<li>
+						<a href="#">
+							<i class="far fa-user-circle"></i> Minha Conta
+						</a>
+					</li>
+					<li>
+						<a href="{{url('/logout')}}">
+							<i class="fas fa-sign-out-alt"></i> Sair
+						</a>
+					</li>
 				</ul>
 			</li>
 		</ul>

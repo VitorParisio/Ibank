@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\App;
-use App\Classes\Account\HistoricDAO;
+use App\Classes\Historic\HistoricDAO;
 
 class HistoricServiceProvider extends ServiceProvider
 {

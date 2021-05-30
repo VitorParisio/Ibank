@@ -16,10 +16,11 @@ class CreateHistoricsTable extends Migration
         Schema::create('historics', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('account_id')->unsigned();
-            $table->enum('type', ['I', 'O', 'T']);
+            $table->enum('type', ['Entrada', 'Saída', 'Transferência']);
             $table->double('amount', 10,2);
             $table->double('total_before', 10,2);
             $table->double('total_after', 10,2);
+            $table->integer('account_id_transaction')->nullable()->change();;
             $table->date('date');
             $table->foreign('account_id')->references('id')->on('accounts')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
