@@ -65,7 +65,7 @@ class Handler extends ExceptionHandler
 
     public function render($request, Exception $exception){
         if($this->isHttpException($exception)){
-            $code = $e->getStatusCode();
+            $code = $exception->getStatusCode();
             if ($code == 404) {
                 return response()->view('bank.pages.404')
             }
