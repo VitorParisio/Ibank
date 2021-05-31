@@ -34,5 +34,5 @@ Volte para a janela de comandos e digite:
 E, para finalizar, digite o comando:
 - <i>php artisan serve</i> (Obs: Caso esteja usando o AVAST, desabilite-o antes de rodar este commando)
 
-Você será redirecionado para a página de login.
+No navegador, digite na barra de endereço "localhost:8000, e então você será redirecionado para a página de login.
 
