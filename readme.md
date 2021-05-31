@@ -4,7 +4,7 @@
 
 Tenha todas informações de suas contas bancárias com apenas um app. Com ele, poderás saber os saldos de cada conta, e simular ações como sacar, depositar e transferir saldos de uma conta para outra de forma simples e rápida. 
 
-## Pré-requisios
+## Pré-requisitos
 
 Antes de começar, você precisará ter instalado em sua máquina as seguintes ferramentas:
 <b>PHP</b>, o banco de dados relacional <b>MySql</b> e um servidor Web (<b>Apache</b>, por exemplo) .
