@@ -1,40 +1,38 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+<h1 align="center">IBank - Sistema de gerencimaneto de contas</h1>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Sobre o IBank
 
-## About Laravel
+Tenha todas informações de suas contas bancárias com apenas um app. Com ele, poderás saber os saldos de cada conta, e simular ações como sacar, depositar e transferir saldos de uma conta para outra de forma simples e rápida. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## Pré-requisitos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Antes de começar, você precisará ter instalado em sua máquina as seguintes ferramentas:
+<b>PHP</b>, o banco de dados relacional <b>MySql</b> e um servidor Web (<b>Apache</b>, por exemplo) .
+O ideal seria baixar um dos programas muito utilizado para instalar todas estas tecnologias citadas anteriomente ao mesmo tempo: O XAMPP.
+Instale também o gerenciador de dependências do <b>PHP</b> chamado <b>composer</b> e, para codificar, instale um editor para trabalhar com os códigos como o <b>VSCode</b>, por exemplo.
+Tendo tudo isso, faça-os funcionarem e vamos ao que interessa.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb combination of simplicity, elegance, and innovation give you tools you need to build any application with which you are tasked.
+## Building
+Clone em sua máquina o projeto através do link https://github.com/VitorParisio/Ibank.git, ou baixe-o clicando na opção CODE/Download ZIP.
+Com o projeto em sua máquina, navegue até ele utlizando a janela de comandos (O prompt de comandos, por exemplo) e digite os seguintes comandos:
+- <i>composer install</i> (instalará todas as dependecias necessárias para o projeto);
+- <i>copy .env.example .env;</i>
+- <i>php artisan key:generate;</i>
 
-## Learning Laravel
+Em seguida, crie uma base de dados no MySql (CREATE DATABASE nome_banco) com o nome que desejar e depois vá ate o arquivo <i>.env</i> do projeto e altere as seguintes variáveis:
 
-Laravel has the most extensive and thorough documentation and video tutorial library of any modern web application framework. The [Laravel documentation](https://laravel.com/docs) is thorough, complete, and makes it a breeze to get started learning the framework.
+- <i>DB_DATABASE=</i> name_database (Nome do bando de dados que você criou anteriomente);
+- <i>DB_USERNAME=</i>root
+- <i>DB_PASSWORD=</i>
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 900 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+Após isso, navegue pelas pastas database/seeds/UsersTableSeeder do projeto e altere os valores dos índices 'email' e 'password' para poder "logar" no sistema.
 
-## Contributing
+Volte para a janela de comandos e digite:
+- <i>php artisan migrate</i>
+- <i>php artisan db:seed</i>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+E, para finalizar, digite o comando:
+- <i>php artisan serve</i> (Obs: Caso esteja usando o AVAST, desabilite-o antes de rodar este commando)
 
-## Security Vulnerabilities
+No navegador, digite na barra de endereço "localhost:8000", e então você será redirecionado para a página de login.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
