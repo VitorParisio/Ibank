@@ -25,7 +25,7 @@ Em seguida, crie uma base de dados no MySql (CREATE DATABASE nome_banco) com o n
 - <i>DB_USERNAME=</i>root
 - <i>DB_PASSWORD=</i>
 
-Após isso, navegue pelas pastas database/seeds/UsersTableSeeder do projeto e altere os valores dos índices 'email' e 'senha' para poder "logar" no sistema.
+Após isso, navegue pelas pastas database/seeds/UsersTableSeeder do projeto e altere os valores dos índices 'email' e 'password' para poder "logar" no sistema.
 
 Volte para a janela de comandos e digite:
 - <i>php artisan migrate</i>
