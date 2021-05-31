@@ -7,7 +7,7 @@ Tenha todas informações de suas contas bancárias com apenas um app. Com ele, 
 ## Pré-requisios
 
 Antes de começar, você precisará ter instalado em sua máquina as seguintes ferramentas:
-<b>PHP</b>, um banco de dados relacional <b>MySql</b> e um servidor Web (<b>Apache</b>, por exemplo) .
+<b>PHP</b>, o banco de dados relacional <b>MySql</b> e um servidor Web (<b>Apache</b>, por exemplo) .
 O ideal seria baixar um dos programas muito utilizado para instalar todas estas tecnologias citadas anteriomente ao mesmo tempo: O XAMPP.
 Instale também o gerenciador de dependências do <b>PHP</b> chamado <b>composer</b> e, para codificar, instale um editor para trabalhar com os códigos como o <b>VSCode</b>, por exemplo.
 Tendo tudo isso, faça-os funcionarem e vamos ao que interessa.
