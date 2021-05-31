@@ -29,7 +29,7 @@ Após isso, navegue em seguida ate as pastas database/seeds/UsersTableSeeder e a
 
 Volte para a janela de comandos e digite:
 - <i>php artisan migrate</i>
-- <i>php artisa db:seed</i>
+- <i>php artisan db:seed</i>
 E, para finalizar, digite o comando:
 - <i>php artisan serve</i> (Obs: Caso esteja usando o AVAST, desabilite-o antes de rodar este commando)
 
