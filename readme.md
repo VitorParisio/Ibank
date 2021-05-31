@@ -31,7 +31,7 @@ Volte para a janela de comandos e digite:
 - <i>php artisan migrate</i>
 - <i>php artisa db:seed</i>
 E, para finalizar, digite o comando:
-- <i>php artisan serve</i>
+- <i>php artisan serve</i> (Obs: Caso esteja usando o AVAST, desabili-o antes de rodar este commando)
 
 Você será redirecionado para a página de login.
 
