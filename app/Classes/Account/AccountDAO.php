@@ -60,7 +60,7 @@ class AccountDAO
 	   						->select('accounts.id','accounts.name', 'accounts.agency', 
 	   							     'accounts.account_number', 'accounts.type',
 	   							     'accounts.amount')
-	   						->where('users.id', $user_id)
+	   						->where('accounts.user_id', $user_id)
 	   						->get();
 
 	   	return view('bank.pages.account.list', compact('account_list', 'title'));
@@ -234,6 +234,7 @@ class AccountDAO
 		$account_dto   = new AccountDTO();
 	   	$account_model = Account::find($id);
 	   	$title         = "IBank - Trasnferir";
+
 		$account_dto->setName($account_model->name);
 		$account_dto->setAmount($account_model->amount);
 
@@ -244,11 +245,11 @@ class AccountDAO
 	}
 
 	public function confirm($id, $sender){
-		$title  = "IBank - Confirmar";
-		$sender = User::where('name', "LIKE", "%$sender%")
-							 ->orWhere('email', $sender)
-							 ->get()
-							 ->first();
+		$title       = "IBank - Confirmar";
+		$sender      = User::where('name', "LIKE", "%$sender%")
+						 ->orWhere('email', $sender)
+						 ->get()
+						 ->first();
 		if(!$sender){
 			return redirect()
 					->back()
@@ -261,7 +262,7 @@ class AccountDAO
 				   ->with('error', "Não é possível transferir para você!");
 		}	
 
-		return view('bank.pages.account.confirm', compact('id', 'sender','title'));					 
+		return view('bank.pages.account.confirm', compact('id', 'sender', 'title'));					 
 								 
 	}
 
@@ -269,11 +270,12 @@ class AccountDAO
 		$account_dto  = new AccountDTO();
 		$historic_dto = new HistoricDTO();
 
-		$user_bank   = Account::find($id);
-		$sender_bank = Account::where('name', "LIKE", "%$bank%")
+		
+		$user_bank    = Account::find($id);
+		$sender_bank  = Account::where('name', "LIKE", "%$bank%")
+								->where('user_id', $sender)
 								->get()
 							 	->first();
-		$senderId = User::find($sender);
 
 		$userId   = User::find(auth()->user()->id);
 

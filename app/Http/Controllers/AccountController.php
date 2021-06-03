@@ -70,7 +70,9 @@ class AccountController extends Controller
 
     public function transfer_store($id, Request $request){
 
-    return Account::transfer_store($id,  $request->get('sender_id'), $request->get('bank'), $request->get('balance')); 
+         return Account::transfer_store($id,  $request->get('sender_id'),
+                        $request->get('bank'), 
+                        $request->get('balance')); 
     }
 
     public function delete($id){

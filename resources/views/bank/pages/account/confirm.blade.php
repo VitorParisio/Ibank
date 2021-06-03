@@ -9,8 +9,8 @@
 				<h1>CONFIRMAR TRANSFERÊNCIA</h1>
 				<div class="container">
 					<div class="confirm__abstract">
-						<p><strong>De:</strong> {{Auth::user()->name}}</p>
-						<p><strong>Para:</strong> {{$sender->name}}</p>
+						<p><strong>De:</strong> {{Auth::user()->name}} {{Auth::user()->lastname}}</p>
+						<p><strong>Para:</strong> {{$sender->name}} {{$sender->lastname}}</p>
 					</div>
 					<div class="confirm__form">
 						{!! Form::open(['route' => ['transfer.store', $id], 'method'=> 'post']) !!}

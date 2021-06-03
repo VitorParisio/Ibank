@@ -8,6 +8,7 @@ class HistoricDTO
 	private $amount;
 	private $total_before;
 	private $total_after;
+	private $id_account_transaction;
 	private $date;
 
 	public function getAccountId(){
@@ -45,6 +46,13 @@ class HistoricDTO
 
 	public function setTotalAfter($total_after){
 		$this->total_after = $total_after;
+	}
+	public function getIdAccountTransaction(){
+		return $this->id_account_transaction;
+	}
+
+	public function setIdAccountTrasanction($id_account_transaction){
+		$this->id_account_transaction = $id_account_transaction;
 	}
 	public function getDate(){
 		return $this->date;

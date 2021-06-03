@@ -17,8 +17,8 @@ $(function() {
       $('.side-bar').toggleClass('show');
     });
   	/*---------- */
-
 });
+
 
 
 

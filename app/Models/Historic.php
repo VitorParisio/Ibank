@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 class Historic extends Model
 {
-    protected $fillable = ['account_id', 'type', 'amount', 'total_before', 'total_after', 'date'];
+    protected $fillable = ['account_id', 'type', 'amount', 'total_before', 'total_after', 'id_account_transaction','date'];
 
     public function getDateAttribute($value){
     	return Carbon::parse($value)->format('d/m/Y');
